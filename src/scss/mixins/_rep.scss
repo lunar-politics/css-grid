@@ -1,0 +1,67 @@
+@mixin filled-btn {
+  padding: 15px 22px;
+  color: var(--light-color);
+  font-weight: bold;
+  background-color: var(--hover-color);
+  border: 3px solid transparent;
+  transition: background-color 0.3s ease-in-out;
+  &:hover {
+    background-color: var(--focus-color);
+  }
+  &:focus {
+    border-color: var(--active-color);
+    outline: none;
+  }
+  &:active {
+    background-color: var(--active-color);
+  }
+
+  @media (max-width: 350px) {
+    font-size: 14px;
+  }
+}
+
+@mixin empty-btn {
+  padding: 15px 22px;
+  color: var(--light-color);
+  font-weight: bold;
+  background-color: transparent;
+  border: 3px solid var(--hover-color);
+  transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+  &:hover {
+    background-color: var(--hover-color);
+  }
+  &:focus {
+    border-color: var(--focus-color);
+    outline: none;
+  }
+  &:active {
+    background-color: var(--active-color);
+    border: 3px solid var(--active-color);
+  }
+}
+
+@mixin tag {
+  position: absolute;
+  padding: 7px 15px;
+  font-size: 14px;
+  color: var(--light-color);
+  background-color: #333333;
+
+  @media (max-width: 350px) {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
+
+@mixin title {
+  margin: 0;
+  font-family: "TTfirsNeue", 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--dark-color);
+
+  @media (max-width: 350px) {
+    font-size: 18px;
+  }
+}

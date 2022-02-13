@@ -1,0 +1,178 @@
+.about {
+  background-color: var(--dark-color);
+
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    // grid-template-rows: 397px;
+    grid-gap: 30px;
+    padding-top: 33px;
+    padding-bottom: 65px;
+
+    @include tablet {
+      padding-top: 32px;
+      padding-bottom: 80px;
+    }
+
+    @include small-tablet {
+      padding-bottom: 60px;
+    }
+
+    @media (max-width: 350px) {
+      grid-gap: 21px;
+      padding-bottom: 49px;
+    }
+
+    &__text {
+      @media (max-width: 650px) {
+        grid-column: 2 span;
+      }
+    }
+
+    &__img {
+      margin-bottom: 18px;
+
+      @include tablet {
+        height: 332px;
+      }
+
+      @include small-tablet {
+        margin-bottom: 0;
+        height: 569px;
+      }
+
+      @media (max-width: 350px) {
+        margin-bottom: 23px;
+        height: 278px;
+      }
+    }
+
+    &__subscr {
+      padding: 31px 0 0;
+
+      @include small-tablet {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 11px;
+        height: 100%;
+      }
+
+      @media (max-width: 650px) {
+        grid-column: 2 span;
+        padding-top: 0;
+      }
+
+    }
+  }
+  &-title {
+    @include title;
+    margin: 0 0 8px;
+    color: var(--light-color);
+  }
+  &-descr {
+    margin: 0;
+    line-height: 28px;
+    color: #cacaca;
+
+    @media (max-width: 350px) {
+      font-size: 14px;
+      line-height: 25px;
+    }
+  }
+  &-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .just-validate-error-field {
+      border: 1px solid #f06666;
+    }
+
+    &__label {
+      position: relative;
+      font-family: "TTfirsNeue", 'Open Sans', sans-serif;
+      font-size: 24px;
+      color:var(--light-color);
+
+      @include tablet {
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 650px) {
+        font-size: 18px;
+      }
+
+      .just-validate-error-label {
+        top: 45px;
+        color:#f06666;
+      }
+    }
+    &__input {
+      display: inline-block;
+      padding: 16px 23px;
+      margin-top: 14px;
+      width: 94%;
+      font-family: var(--font-family);
+      font-size: 16px;
+      color: var(--light-color);
+      background-color: #4a4a4a;
+      border: 1px solid transparent;
+
+      @include tablet {
+        padding: 14px 23px;
+        margin-top: 13px;
+        margin-bottom: 13px;
+        width: 73%;
+      }
+
+      @include small-tablet {
+        width: 100%;
+      }
+
+      @media (max-width: 350px) {
+        margin-bottom: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      &:hover {
+
+        &::placeholder {
+          color: var(--hover-color);
+        }
+      }
+
+      &:focus {
+        outline: none;
+        border: 1px solid var(--hover-color);
+      }
+
+      &::placeholder {
+        color: #cacaca;
+        transition: color .3s ease-in-out;
+      }
+
+
+    }
+    &__btn {
+      @include filled-btn;
+      padding: 13px 20px;
+
+      @include tablet {
+        padding: 12px 20px;
+      }
+
+      @media (max-width: 350px) {
+        padding: 9px 19px;
+      }
+    }
+
+
+  }
+}

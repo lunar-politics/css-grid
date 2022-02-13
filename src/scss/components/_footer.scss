@@ -1,0 +1,146 @@
+.footer {
+  background-color: var(--dark-color);
+
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    align-items: center;
+
+    @include tablet {
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    @include small-tablet {
+      grid-template-columns: repeat(6, 1fr);
+      padding-top: 22px;
+      padding-bottom: 19px;
+    }
+
+    @media (max-width: 350px) {
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+  }
+
+  &-logo {
+    grid-column: 1 / 5;
+
+    @include tablet {
+      grid-column: 1 / 4;
+
+      img {
+        width: 166px;
+        height: 27px;
+      }
+    }
+
+    @include small-tablet {
+
+      img {
+        margin-bottom: 3px;
+      }
+
+    }
+
+    @include mobile {
+      grid-column: 1 / 7;
+      justify-self: center;
+      text-align: center;
+    }
+
+    @media (max-width: 350px) {
+      padding-top: 13px;
+      padding-bottom: 13px;
+      width: 100%;
+      background-color: #4a4a4a;
+
+      img {
+        width: 111px;
+        height: 18px;
+      }
+    }
+
+    &__text {
+      display: block;
+      font-family: "TTfirsNeue", 'Open Sans', sans-serif;
+      font-size: 14px;
+      color: #e9e9e9;
+
+      @media (max-width: 350px) {
+       font-size: 10px;
+      }
+    }
+  }
+
+  &-motto {
+    grid-column: 5 / 9;
+    padding-top: 10px;
+
+    @include tablet {
+      grid-column: 4 / 7;
+      margin-right: -12px;
+    }
+
+    @include small-tablet {
+      display: none;
+    }
+
+    &__text {
+      margin: 0;
+      max-width: 361px;
+      line-height: 22px;
+      color: #cacaca;
+    }
+
+    &__cr {
+      margin: 0;
+      line-height: 22px;
+      color: #666666;
+    }
+  }
+
+  &-social {
+    grid-column: 9 / 13;
+    justify-self: end;
+    padding-top: 5px;
+    padding-bottom: 3px;
+
+    @include tablet {
+      grid-column: 7 / 9;
+    }
+
+    @include small-tablet {
+      grid-column: 3 span;
+    }
+
+    @include mobile {
+      grid-column: 1 / 7;
+      justify-self: center;
+    }
+
+    @media (max-width: 350px) {
+      order: -1;
+      padding-top: 10px;
+    }
+
+    &__text {
+      display: block;
+      margin-bottom: 10px;
+      color: #cacaca;
+    }
+
+    &__list {
+      padding-left: 15px;
+
+      @include tablet {
+        display: flex;
+      }
+    }
+
+  }
+}
